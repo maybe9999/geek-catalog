@@ -36,15 +36,20 @@ async function addProduct(id, name, price, img){
     }
 }
 
-async function deleteProduct(id){
-    let peticion = await fetch(`/api/products/${id}`,{
-        method:"DELETE",
-        headers:{
-            "Content-type":"application/json"
+async function deleteProduct(id) {
+    let peticion = await fetch(`/api/products/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json"
         },
-    })
-    let data = peticion.json()
-    return data
+    });
+
+    if (peticion.ok) {
+        const data = await peticion.json();  // Asegúrate de esperar la respuesta JSON
+        return data;
+    } else {
+        console.error("Error al eliminar el producto", peticion.status);
+    }
 }
 
 async function getLenProducts(){
