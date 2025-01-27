@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challange Alura Geek</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="./assets/3heart.svg" alt="#3 Corazones estilo retro" class="header__ico">
+        <h1 class="header__paragraph">AluraGeek</h1>
+    </header>
+    <main class="main">
+        <section class="product">
+            <h2 class="product__title">MIS PRODUCTOS</h2>
+            <ul class="product__list">
+                <!-- 
+                <li class="product__element">
+                    <img src="./assets/Stormtrooper.png" alt="Imagen de" class="product__element__imagen">
+                    <p class="product__element__name">Stormtrooper</p>
+                    <p class="product__element__price">$ 60 <img src="./assets/icoDelete.png" alt="" class="product__element__ico-delete"></p>
+                </li>
+                <li class="product__element">
+                    <img src="./assets/GameBoyClassic.png" alt="Imagen de" class="product__element__imagen">
+                    <p class="product__element__name">Game Boy Classic</p>
+                    <p class="product__element__price">$ 60 <img src="./assets/icoDelete.png" alt="" class="product__element__ico-delete"></p>
+                </li>
+                <li class="product__element">
+                    <img src="./assets/GameBoyClassic.png" alt="Imagen de" class="product__element__imagen">
+                    <p class="product__element__name">Stormtrooper</p>
+                    <p class="product__element__price">$ 60 <img src="./assets/icoDelete.png" alt="" class="product__element__ico-delete"></p>
+                </li>
+                <li class="product__element">
+                    <img src="./assets/Stormtrooper.png" alt="Imagen de" class="product__element__imagen">
+                    <p class="product__element__name">Game Boy Classic</p>
+                    <p class="product__element__price">$ 60 <img src="./assets/icoDelete.png" alt="" class="product__element__ico-delete"></p>
+                </li>
+                -->
+            </ul>
+
+        </section>
+        <section class="add-product">
+            <h2 class="add-product__title">AGREGAR PRODUCTO:</h2>
+            <form class="add-product__form" data-form>
+                <input class="add-product__campo" type="text" placeholder="Nombre . . ." data-name>
+                <input class="add-product__campo" type="text" placeholder="Precio . . ." data-price>
+                <input class="add-product__campo" type="text" placeholder="Imagen . . ." data-img>
+                <span>
+                    <button class="add-product__clear" type="button"> Limpiar </button>
+                    <button class="add-product__send" type="submit"> Enviar </button>
+                </span>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <h2 class="footer__title"><img src="./assets/3heart.svg" alt="#3 Corazones estilo retro" class="header__ico"> AluraGeek</h2>
+        <p class="footer__name">DESARROLLADO POR MATIAS</p></br>
+        <P class="footer__info">ALURA LATAM - 2025</P>
+    </footer>
+    
+</body>
+<script src="./js/mostrarProductos.js" type="module"></script>
+<script src="./js/crearProducto.js" type="module" ></script>
+</html>
