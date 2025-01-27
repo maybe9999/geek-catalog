@@ -6,10 +6,6 @@
         "use": "@vercel/static"
       },
       {
-        "src": "db.json",
-        "use": "@vercel/node"
-      },
-      {
         "src": "assets/**/*",
         "use": "@vercel/static"
       },
@@ -20,12 +16,16 @@
       {
         "src": "style.css",
         "use": "@vercel/static"
+      },
+      {
+        "src": "api/**/*",
+        "use": "@vercel/node"
       }
     ],
     "routes": [
       {
-        "src": "/api/(.*)",
-        "dest": "/db.json"
+        "src": "/api/products",
+        "dest": "/api/products.js"
       },
       {
         "src": "/assets/(.*)",
@@ -41,3 +41,4 @@
       }
     ]
   }
+  
