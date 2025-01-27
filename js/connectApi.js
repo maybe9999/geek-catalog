@@ -1,6 +1,6 @@
 async function getProducts(){
     try {
-        const response = await fetch("http://127.0.0.1:3001/products");
+        const response = await fetch("/api/products");
         const data = await response.json();
         return data;  // Asegúrate de retornar los productos
     } catch (error) {
@@ -11,7 +11,7 @@ async function getProducts(){
 
 async function addProduct(id, name, price, img){
     try{
-        const peticion = await fetch("http://127.0.0.1:3001/products", {
+        const peticion = await fetch("/api/products", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
@@ -37,7 +37,7 @@ async function addProduct(id, name, price, img){
 }
 
 async function deleteProduct(id){
-    let peticion = await fetch(`http://127.0.0.1:3001/products/${id}`,{
+    let peticion = await fetch(`/api/products/${id}`,{
         method:"DELETE",
         headers:{
             "Content-type":"application/json"
@@ -49,7 +49,7 @@ async function deleteProduct(id){
 
 async function getLenProducts(){
     try {
-        const response = await fetch("http://127.0.0.1:3001/products");
+        const response = await fetch("/api/products");
         const data = await response.json();
         return data.length;  // Asegúrate de retornar los productos
     } catch (error) {
