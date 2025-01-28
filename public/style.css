@@ -117,7 +117,7 @@ body{
     justify-content: flex-start;
     flex-wrap: wrap;
     max-width: 100%;
-    gap: 40px 40px;
+    gap: calc(100vw* 0.02) calc(100vw* 0.02);
     margin: 50px 0px;
     box-sizing: border-box;
 }
