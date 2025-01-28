@@ -95,6 +95,7 @@ body{
 .main{
     display: flex;
     flex-direction: column-reverse;
+    justify-content: center;
 }
 
 /*Mis Productos*/
