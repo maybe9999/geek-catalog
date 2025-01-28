@@ -1,4 +1,5 @@
-const connection = require("./db.js")
+import connection from './db.js';
+
 
 //Obtener
 const getProducts = (req, res) => {
@@ -52,9 +53,9 @@ const deleteProducts = async (req, res) => {
     })
 }
 
-module.exports = {
+export default {
     getProducts,
     postProducts,
     putProducts,
     deleteProducts
-}
+};

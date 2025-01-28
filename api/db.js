@@ -1,5 +1,8 @@
-const mySqlDB = require("mysql2"); //Se importa el modulo para conectarse a la Base de Datos
-require("dotenv").config(); //Sirve para usar variables de entorno...
+import mySqlDB from "mysql2"; // Se importa el modulo para conectarse a la Base de Datos
+import dotenv from "dotenv"; // Sirve para usar variables de entorno...
+
+dotenv.config(); // Carga las variables de entorno
+
 
 //Se hace la conexión a la Base de Datos... (se logea)
 const connection = mySqlDB.createConnection({
@@ -45,4 +48,4 @@ connection.on('error', (err) => {
 });
 
 
-module.exports = connection;
+export default connection;

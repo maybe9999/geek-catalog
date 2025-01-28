@@ -1,8 +1,10 @@
-const express = require('express');
-const path = require('path');
-const controller = require("../api"); //Para hacer consultas a la bd
+import express from 'express';
+import path from 'path';
+import controller from '../api/index.js'; // Para hacer consultas a la bd
 
 const routerApi = express.Router(); // Crea un nuevo router de Express
+
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 const routesPublic = {// Resuelve la ruta absoluta hacia los archivos
     "" : path.resolve(__dirname, '../public/index.html'), //home
@@ -27,9 +29,7 @@ function mostrarSeccion(req, res) {
     res.sendFile(routesPublic[endPointActual]); //Modificado para el Login
 }
 
-module.exports = {
-    routerApi,
-    mostrarSeccion,
-};
+export default { routerApi, mostrarSeccion };
+
 
 
