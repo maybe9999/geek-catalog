@@ -1,4 +1,5 @@
 import { connectApi } from "./connectApi.js"
+import { mostrarProductos } from "./mostrarProductos.js"
 
 let nombreAddProduct = document.querySelector("[data-name]")
 let priceAddProduct = document.querySelector("[data-price]")
@@ -12,13 +13,13 @@ async function createNewProduct(e){
     e.stopPropagation();
     e.stopImmediatePropagation();
 
-    const lenProducts = await connectApi.getLenProducts()
-    const name = nombreAddProduct.value;
+    const title = nombreAddProduct.value;
     const price = priceAddProduct.value;
     const img = imageAddProduct.value;
 
-    await connectApi.addProduct(lenProducts, name, price, img);
+    const status = await connectApi.addProduct(title, price, img);
 
+    if (status) mostrarProductos.listProducts();
     return false
 }
 

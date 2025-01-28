@@ -4,12 +4,15 @@
   "description": "## Descripción Un pagina web simple con un diseño responsivo y dinámico. Muestra productos geek como si fuera un ecomerce, permite hacer operaciones CRUD interactuando con la base de datos.",
   "main": "index.js",
   "scripts": {
-    "dev": "npx json-server db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^1.0.0-beta.3"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "json-server": "^1.0.0-beta.3",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.12.0"
   }
 }
