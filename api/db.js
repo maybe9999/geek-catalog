@@ -10,7 +10,8 @@ const connection = await mySqlDB.createConnection({
     user : process.env.USER_DATABASE,
     password : process.env.PASSWORD_DATABASE,
     database : process.env.NAME_DATABASE,
-    port: process.env.PORT_DATABASE ,
+    port: process.env.PORT_DATABASE,
+    connectTimeout: 10000,
 });
 
 
@@ -39,10 +40,10 @@ connection.on('error', (err) => {
         })
     } else if (err.code === 'PROTOCOL_CONNECTION_LOST'){
         console.log('Conexion perdida, recuperando...');
-        setTimeout(connection.connect(), 1000);
+        setTimeout(() => connection.connect(), 1000);
     } else {
         console.log('Error, recuperando...\n El error es:,',err.code, "\ncodigo de error extendido:", err);;
-        setTimeout(connection.connect(), 60000);
+        setTimeout(() => connection.connect(), 60000);
         
     }
 });
