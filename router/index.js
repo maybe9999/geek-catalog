@@ -4,7 +4,7 @@ import controller from '../api/index.js'; // Para hacer consultas a la bd
 
 const routerApi = express.Router(); // Crea un nuevo router de Express
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const __dirname = import.meta.dirname;
 
 const routesPublic = {// Resuelve la ruta absoluta hacia los archivos
     "" : path.resolve(__dirname, '../public/index.html'), //home
