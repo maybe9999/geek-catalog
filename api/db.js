@@ -5,7 +5,7 @@ dotenv.config(); // Carga las variables de entorno
 
 
 //Se hace la conexión a la Base de Datos... (se logea)
-const connection = mySqlDB.createConnection({
+const connection = await mySqlDB.createConnection({
     host : process.env.HOST_DATABASE,
     user : process.env.USER_DATABASE,
     password : process.env.PASSWORD_DATABASE,
