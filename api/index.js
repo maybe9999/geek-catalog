@@ -5,10 +5,8 @@ const getProducts = (req, res) => {
     const sql = `SELECT * FROM Products`;
     connection.query(sql, (err, data) => {
         if (err){
-            console.log("mal", err)
             res.json({"err":`${err}`, "ok":False})
         }else{
-            console.log("ok", data)
             res.json(data)
         }
     })
@@ -19,7 +17,6 @@ const postProducts = async (req, res) => {
     console.log(req.body)
     const {title, price, img} = req.body
     const sql = `INSERT INTO Products (title, price, img) VALUES ('${title}', '${price}', '${img}')`;
-    console.log(sql)
     connection.query(sql, (err, data) => {
         if (err){
             res.json({err:`${err}`, ok:false})
