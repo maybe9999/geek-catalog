@@ -1,11 +1,27 @@
-async function getProducts(){
+async function getProducts(retries = 3, delay = 1000) {
     try {
         const response = await fetch("/api/");
+        if (!response.ok) {
+            throw new Error('Error en la respuesta de la API');
+        }
         const data = await response.json();
+        if (data.ok){
+            console.log(data.err);
+            throw new Error('Error en la respuesta de la API');
+        }
         return data;  // Asegúrate de retornar los productos
     } catch (error) {
         console.error('Error:', error);
-        return [];  // En caso de error, retornar un arreglo vacío
+        
+        if (retries > 0) {
+            console.log(`Reintentando... Intento restante: ${retries}`);
+            // Espera el tiempo definido antes de reintentar
+            await new Promise(res => setTimeout(res, delay));
+            return getProducts(retries - 1, delay); // Reintenta la solicitud
+        } else {
+            console.log("Recargue la página o intente más tarde.");
+            return [];  // Retorna un arreglo vacío si se agotaron los intentos
+        }
     }
 }
 

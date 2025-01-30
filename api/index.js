@@ -6,7 +6,7 @@ const getProducts = (req, res) => {
     const sql = `SELECT * FROM Products`;
     connection.query(sql, (err, data) => {
         if (err){
-            res.json({"err":`${err}`, "ok":False})
+            res.json({"err":`${err}`, ok:false})
         }else{
             res.json(data)
         }
@@ -43,10 +43,10 @@ const putProducts = async (req, res) => {
 //Eliminar
 const deleteProducts = async (req, res) => {
     const {id} = req.body
-    const sql = `DELETE FROM Products WHERE id = '${id}'`;
+    const sql = `DELETE FROM Products WHERE id='${id}'`;
     connection.query(sql, (err, data) => {
         if (err){
-            res.json({err, ok:false})
+            res.json({err, ok:false, data})
         }else{
             res.json({ok:true})
         }
