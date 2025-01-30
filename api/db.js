@@ -3,16 +3,17 @@ import dotenv from "dotenv"; // Sirve para usar variables de entorno...
 
 dotenv.config(); // Carga las variables de entorno
 
-
-//Se hace la conexión a la Base de Datos... (se logea)
-const connection = await mySqlDB.createConnection({
+configBD = {
     host : process.env.HOST_DATABASE,
     user : process.env.USER_DATABASE,
     password : process.env.PASSWORD_DATABASE,
     database : process.env.NAME_DATABASE,
     port: process.env.PORT_DATABASE,
     connectTimeout: 10000,
-});
+}
+
+//Se hace la conexión a la Base de Datos... (se logea)
+const connection = await mySqlDB.createConnection(configBD);
 
 
 //se llama al método connect y mediante una función anónima verificamos si la conexión se realizo correctamente
